@@ -15,6 +15,7 @@ namespace PremiumBusReservationSystem
         public Form5()
         {
             InitializeComponent();
+            label2.Text = general.getusername();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -36,6 +37,13 @@ namespace PremiumBusReservationSystem
         {
             Form7 fm = new Form7();
             
+            fm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form8 fm = new Form8();
+
             fm.Show();
         }
     }

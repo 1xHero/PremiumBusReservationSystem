@@ -22,8 +22,10 @@ namespace PremiumBusReservationSystem
     public class general
     {
 
-        protected static string sqlcon = "server=127.0.0.1;user id=root;database=premiumbus;Password=toor1234;";
-        public static string username = "";
+        protected static string sqlcon = "server=127.0.0.1;user id=root;database=premiumbus;Password=toor1234;Convert Zero Datetime=True;";
+        public static string username = null;
+        public static string firstname = null;
+        public static string lastname = null;
 
         public static string getsql()
         {
@@ -38,6 +40,13 @@ namespace PremiumBusReservationSystem
         public static void setusername(string a)
         {
             username = a;
+           
+        }
+        public static void setuserinfo(string b, string c)
+        {
+            
+            firstname = b;
+            lastname = c;
         }
     }
 }

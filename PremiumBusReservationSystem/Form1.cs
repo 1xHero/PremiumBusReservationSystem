@@ -77,7 +77,7 @@ namespace PremiumBusReservationSystem
 
                 con.Open();
 
-                string query = "select role from user_account where username = '" + textBox1.Text + "' and password = '" + textBox2.Text + "'";
+                string query = "select role,first_name,last_name from user_account where username = '" + textBox1.Text + "' and password = '" + textBox2.Text + "'";
                 //SqlDataAdapter sda = new SqlDataAdapter("select * from user_account where username='" + textBox1.Text + "' and password='" + textBox2.Text + "'", con);
                 MySqlCommand sda = new MySqlCommand(query, con);
                 MySqlDataAdapter returnVal = new MySqlDataAdapter(query, con);
@@ -96,8 +96,9 @@ namespace PremiumBusReservationSystem
                     {
                         case "admin":
                             {
-                               MessageBox.Show("Login Successful!");
+                               MessageBox.Show("Login Successful!"+dt.Rows[0]["first_name"]+dt.Rows[0]["last_name"]);
                                 general.setusername(textBox1.Text);
+                               // general.setuserinfo(, );
                                
                                     this.Hide();
                                    Form2 fm = new Form2();

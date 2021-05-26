@@ -23,7 +23,21 @@ namespace PremiumBusReservationSystem
             InitializeComponent();
 
         }
-        
+        private void ClearData()
+        {
+
+            textBox3.Text = "";
+            id.Text = "";
+            stime.Text = "";
+            jtime.Text = "";
+            sdeparture.Text = "";
+            freeseats =0;
+            price.Text = "";
+            sarrive.Text = "";
+
+
+
+        }
 
         private MySqlConnection con()
         {
@@ -35,7 +49,8 @@ namespace PremiumBusReservationSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-          //  MessageBox.Show(general.getusername());
+            //  MessageBox.Show(general.getusername());
+            //MessageBox.Show("@!!"+freeseats);
             con().Open();
             string query = "SELECT * FROM  trip";
 
@@ -58,10 +73,17 @@ namespace PremiumBusReservationSystem
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-                string Query = "INSERT INTO ticket (username, journey_date,schedule_departure, schedule_arrival,price,From_To) VALUES('" + general.getusername() + "','" + jtime.Text + "','" + sdeparture.Text + "','" +sarrive.Text + "','" + price.Text + "','" + textBox3.Text + "');";
-                string Query3 = "Select freeseats from trip where id="+ id.Text +" ";
-                //string Query2 = "INSERT INTO trip (freeseats) VALUES('" + dtime.Text + "');";
+       {
+            if (freeseats <= 0)
+            {
+                MessageBox.Show("This trip is full,you cant buy ticket.");
+                ClearData();
+            }
+            else
+            {
+                string Query = "INSERT INTO ticket (username, journey_date,schedule_departure, schedule_arrival,price,From_To,trip_id) VALUES('" + general.getusername() + "','" + jtime.Text + "','" + sdeparture.Text + "','" +sarrive.Text + "','" + price.Text + "','" + textBox3.Text + "','" + id.Text + "');";
+               // string Query3 = "Select freeseats from trip where id="+ id.Text +" ";
+                string Query2 = "update trip set freeseats=freeseats-1 where id ='" + id.Text + "';";
             try
             {
 
@@ -72,19 +94,49 @@ namespace PremiumBusReservationSystem
                 MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
 
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
-                MessageBox.Show("Ticket Bought Scussefully");
+               
+                
                 while (MyReader2.Read())
                 {
                 }
                 con().Close();
+                
+                
+
+
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            try
+                {
+
+                    string MyConnection3 = general.getsql();
+                    MySqlConnection MyConn3 = new MySqlConnection(MyConnection3);
+                    MyConn3.Open();
+                    MySqlCommand MyCommand3 = new MySqlCommand(Query2, MyConn3);
+                    MySqlDataReader MyReader3;
+                    MyReader3 = MyCommand3.ExecuteReader();
+                while (MyReader3.Read())
+                {
+                }
+                con().Close();MessageBox.Show("Ticket Bought Scussefully");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -96,6 +148,11 @@ namespace PremiumBusReservationSystem
             price.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
             textBox3.Text ="From " + dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString()+" TO "+dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
             freeseats = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ClearData();
         }
     }
 }
