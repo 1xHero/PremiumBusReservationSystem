@@ -96,9 +96,9 @@ namespace PremiumBusReservationSystem
                     {
                         case "admin":
                             {
-                               MessageBox.Show("Login Successful!"+dt.Rows[0]["first_name"]+dt.Rows[0]["last_name"]);
+                               MessageBox.Show("Login Successful!");
                                 general.setusername(textBox1.Text);
-                               // general.setuserinfo(, );
+                               // general.setuserinfo(, );+dt.Rows[0]["first_name"]+dt.Rows[0]["last_name"]
                                
                                     this.Hide();
                                    Form2 fm = new Form2();

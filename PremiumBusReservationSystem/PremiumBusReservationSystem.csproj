@@ -108,11 +108,6 @@
     <Compile Include="Form8.Designer.cs">
       <DependentUpon>Form8.cs</DependentUpon>
     </Compile>
-    <Compile Include="premiumbusDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>premiumbusDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -149,17 +144,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
-    <None Include="premiumbusDataSet.xsc">
-      <DependentUpon>premiumbusDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="premiumbusDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>premiumbusDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="premiumbusDataSet.xss">
-      <DependentUpon>premiumbusDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\DataSources\MySql.Data.Common.StringUtility.datasource" />
     <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.datasource" />
     <None Include="Properties\DataSources\MySql.Data.MySqlClient.Authentication.MySqlClearPasswordPlugin.datasource" />
