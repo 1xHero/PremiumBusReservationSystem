@@ -95,7 +95,7 @@ namespace PremiumBusReservationSystem
                     MyConn2.Open();
                     MyReader2 = MyCommand2.ExecuteReader();
                     MessageBox.Show("Save Data");
-                    button4.PerformClick();
+                    
                     while (MyReader2.Read())
                     {
                     }
@@ -107,6 +107,8 @@ namespace PremiumBusReservationSystem
                     MessageBox.Show(ex.Message);
                 }
                 ClearData();
+                button4.PerformClick();
+
             }
             else
             {
@@ -132,6 +134,7 @@ namespace PremiumBusReservationSystem
 
                  con().Close();
             ClearData();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -161,7 +164,7 @@ namespace PremiumBusReservationSystem
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
                 MessageBox.Show("Data Updated");
-                    button4.PerformClick();
+                    
 
                     while (MyReader2.Read())
                 {
@@ -173,7 +176,7 @@ namespace PremiumBusReservationSystem
                 MessageBox.Show(ex.Message);
             }
             ClearData();
-            
+            button4.PerformClick();
             }
             else
             {
@@ -199,7 +202,7 @@ namespace PremiumBusReservationSystem
                     MyConn2.Open();
                     MyReader2 = MyCommand2.ExecuteReader();
                     MessageBox.Show("Data Deleted");
-                    button4.PerformClick();
+                    
                     while (MyReader2.Read())
                     {
                     }
@@ -210,7 +213,7 @@ namespace PremiumBusReservationSystem
                     MessageBox.Show(ex.Message);
                 }
 
-                ClearData();
+                ClearData();button4.PerformClick();
             }
             else
             {

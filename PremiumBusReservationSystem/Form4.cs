@@ -17,6 +17,7 @@ namespace PremiumBusReservationSystem
         public Form4()
         {
             InitializeComponent();
+            
         }
 
         private MySqlConnection con()
@@ -66,7 +67,7 @@ namespace PremiumBusReservationSystem
 
             con().Close();
             // ClearData();
-
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -93,13 +94,15 @@ namespace PremiumBusReservationSystem
                 {
                 }
                 MyConn2.Close();
-            }
+                    
+                }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
             ClearData();
+            button1.PerformClick();
             }
             else
             {
@@ -139,6 +142,7 @@ namespace PremiumBusReservationSystem
                     MessageBox.Show(ex.Message);
                 }
                 ClearData();
+                button1.PerformClick();
             }
             else
             {
@@ -148,6 +152,7 @@ namespace PremiumBusReservationSystem
 
         private void Insert_Click(object sender, EventArgs e)
         {
+            
             try
             {
 
@@ -172,6 +177,7 @@ namespace PremiumBusReservationSystem
                 MessageBox.Show(ex.Message);
             }
             ClearData();
+            button1.PerformClick();
         }
     }
 }
