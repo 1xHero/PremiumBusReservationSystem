@@ -97,9 +97,12 @@ namespace PremiumBusReservationSystem
                         case "admin":
                             {
                                MessageBox.Show("Login Successful!");
+
                                 general.setusername(textBox1.Text);
-                               // general.setuserinfo(, );+dt.Rows[0]["first_name"]+dt.Rows[0]["last_name"]
-                               
+                               general.setuserinfo(dt.Rows[0]["first_name"] as string,dt.Rows[0]["last_name"] as string);
+
+
+                                //MessageBox.Show(general.firstname + general.lastname);
                                     this.Hide();
                                    Form2 fm = new Form2();
                     
@@ -113,7 +116,10 @@ namespace PremiumBusReservationSystem
                         case "user":
                             {
                                 MessageBox.Show("Login Successful!");
+
                                 general.setusername(textBox1.Text);
+                              
+                                general.setuserinfo(dt.Rows[0]["first_name"] as string, dt.Rows[0]["last_name"] as string);
                                 this.Hide();
                                 Form5 frm = new Form5();
                                 frm.Show();

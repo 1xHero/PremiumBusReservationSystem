@@ -16,28 +16,39 @@ namespace PremiumBusReservationSystem
     public partial class Form7 : Form
     {
         
-        public static int freeseats=0;
+        
+
 
         public Form7()
         {
             InitializeComponent();
 
         }
+
+        public static int freeseats=0;
+        public static string textBox3 = null;
+        // public static string id = null;
+        public static string sstime = null;
+        public static string jjtime = null;
+        public static string ssdeparture = null;
+        public static string pprice = null;
+        public static string ssarrive = null;
+
+
         private void ClearData()
         {
-
-            textBox3.Text = "";
-            id.Text = "";
-            stime.Text = "";
-            jtime.Text = "";
-            sdeparture.Text = "";
+            textBox3 = null;
+            id.Text = null;
+            sstime = null;
+            jjtime = null;
+            ssdeparture = null;
             freeseats =0;
-            price.Text = "";
-            sarrive.Text = "";
-
-
+            pprice = null;
+            ssarrive = null;
 
         }
+
+
 
         private MySqlConnection con()
         {
@@ -81,9 +92,9 @@ namespace PremiumBusReservationSystem
             }
             else
             {
-                string Query = "INSERT INTO ticket (username, journey_date,schedule_departure, schedule_arrival,price,From_To,trip_id) VALUES('" + general.getusername() + "','" + jtime.Text + "','" + sdeparture.Text + "','" +sarrive.Text + "','" + price.Text + "','" + textBox3.Text + "','" + id.Text + "');";
+                string Query = "INSERT INTO ticket (username, journey_date,schedule_departure, schedule_arrival,price,From_To,trip_id) VALUES('" + general.getusername() + "','" + jjtime + "','" + ssdeparture + "','" +ssarrive + "','" + pprice + "','" + textBox3 + "','" + id + "');";
                // string Query3 = "Select freeseats from trip where id="+ id.Text +" ";
-                string Query2 = "update trip set freeseats=freeseats-1 where id ='" + id.Text + "';";
+                string Query2 = "update trip set freeseats=freeseats-1 where id ='" + id + "';";
             try
             {
 
@@ -142,17 +153,22 @@ namespace PremiumBusReservationSystem
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
              id.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-           jtime.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            sdeparture.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            sarrive.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            price.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-            textBox3.Text ="From " + dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString()+" TO "+dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+           jjtime = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            ssdeparture = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            ssarrive = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            pprice = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+            textBox3 ="From " + dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString()+" TO "+dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
             freeseats = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             ClearData();
+        }
+
+        private void stime_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

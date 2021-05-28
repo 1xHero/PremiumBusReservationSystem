@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using Word = Microsoft.Office.Interop.Word;
 using System.Reflection;
 using System.IO;
+using System.Diagnostics;
 
 namespace PremiumBusReservationSystem
 {
@@ -23,9 +24,15 @@ namespace PremiumBusReservationSystem
         }
 
         public static string selected_ID=null;
-        public static string mdate = null;
-        public static string tripid = null;
+        public static string mdate = null;//month date
+        public static string tripid = null;//trip id
+        public static string fto = null;// from to
+        public static string tdep = null;// depature time
        
+        public static string tarriv = null;// arrival time
+         public static string stime = null;// sale time
+
+
 
 
         private void ClearData()
@@ -42,7 +49,13 @@ namespace PremiumBusReservationSystem
             selected_ID = null;
             mdate = null;
             tripid = null;
+            fto = null;
+            stime = null;
+            tdep = null;
+            tarriv = null;
         }
+
+
         private MySqlConnection con()
         {
             MySqlConnection con = new MySqlConnection();
@@ -61,19 +74,19 @@ namespace PremiumBusReservationSystem
         //Find and Replace Method
         private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
         {
-            object matchCase = true;
-            object matchWholeWord = true;
+            object matchCase = false;
+            object matchWholeWord = false;
             object matchWildCards = false;
             object matchSoundLike = false;
             object nmatchAllforms = false;
-            object forward = true;
+            object forward = false;
             object format = false;
             object matchKashida = false;
             object matchDiactitics = false;
             object matchAlefHamza = false;
             object matchControl = false;
             object read_only = false;
-            object visible = true;
+            object visible = false;
             object replace = 2;
             object wrap = 1;
 
@@ -108,10 +121,17 @@ namespace PremiumBusReservationSystem
                 myWordDoc.Activate();
 
                 //find and replace
-                /*this.FindAndReplace(wordApp, "<name>", textBox1.Text);
-                this.FindAndReplace(wordApp, "<firstname>", textBox2.Text);
-                this.FindAndReplace(wordApp, "<birthday>", dateTimePicker1.Value.ToShortDateString());
-                this.FindAndReplace(wordApp, "<date>", DateTime.Now.ToShortDateString());*/
+                this.FindAndReplace(wordApp, "<fn>", general.firstname);
+                this.FindAndReplace(wordApp, "<ln>", general.lastname);
+                this.FindAndReplace(wordApp, "<dt>", mdate);
+                this.FindAndReplace(wordApp, "<st>", stime);
+                this.FindAndReplace(wordApp, "<pfromto>", fto);
+                this.FindAndReplace(wordApp, "<dhdep>", tdep);
+                this.FindAndReplace(wordApp, "<tid>", tripid);
+                this.FindAndReplace(wordApp, "<id>", selected_ID);
+
+                //this.FindAndReplace(wordApp, "<dtime>", "1992-10-10");//dateTimePicker1.Value.ToShortDateString()
+                //this.FindAndReplace(wordApp, "<pfrom>", DateTime.Now.ToShortDateString());
             }
             else
             {
@@ -144,6 +164,10 @@ namespace PremiumBusReservationSystem
             selected_ID = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             mdate = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             tripid = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+            fto = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            tdep= dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            tarriv=dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            stime= dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -243,6 +267,25 @@ namespace PremiumBusReservationSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            if ((selected_ID != null && tripid !=null)) { 
+
+            string currentDir = System.IO.Directory.GetCurrentDirectory();
+            
+            string path = Path.Combine(currentDir, "..\\..\\..\\tickets.doc");
+            string spath = Path.Combine(currentDir, "..\\..\\..\\ticket_out.doc");
+
+
+            CreateWordDocument(@path, @spath);
+
+                Process.Start(spath);
+
+            }
+            else
+            {
+                MessageBox.Show("Error: Select first ticket");
+            }
+
 
         }
     }

@@ -21,6 +21,7 @@ namespace PremiumBusReservationSystem
         public Form3()
         {
             InitializeComponent();
+            //button4.PerformClick();
 
         }
         private MySqlConnection con()
@@ -34,14 +35,14 @@ namespace PremiumBusReservationSystem
         private void ClearData()
         {
             
-            textBox3.Text = "";
-            nseat.Text = "";
-            dtime.Text = "";
-            atime.Text = "";
-            from.Text = "";
-            to.Text = "";
-            tprice.Text = "";
-            mdate.Text = "";
+            textBox3.Text = null;//id box
+            nseat.Text = null;
+            dtime.Text = null;
+            atime.Text = null;
+            from.Text = null;
+            to.Text = null;
+            tprice.Text = null;
+            mdate.Text = null;
             
 
 
@@ -78,30 +79,39 @@ namespace PremiumBusReservationSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (dtime != null && atime != null && tprice != null && nseat != null)
             {
-               
-                string MyConnection2 = general.getsql();
-            
-                string Query = "INSERT INTO trip (departure_time,arrival_time, numseats,freeseats, ticketprice,pfrom,pto,monthdate) VALUES('" + dtime.Text + "','" + atime.Text + "','" + nseat.Text+ "','" + nseat.Text + "','" + tprice.Text + "','" + from.Text + "','" + to.Text + "','" + mdate.Text + "');";
-                
-                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-            
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                MySqlDataReader MyReader2;
-                MyConn2.Open();
-                MyReader2 = MyCommand2.ExecuteReader();
-                MessageBox.Show("Save Data");
-                while (MyReader2.Read())
+                try
                 {
+
+                    string MyConnection2 = general.getsql();
+
+                    string Query = "INSERT INTO trip (departure_time,arrival_time, numseats,freeseats, ticketprice,pfrom,pto,monthdate) VALUES('" + dtime.Text + "','" + atime.Text + "','" + nseat.Text + "','" + nseat.Text + "','" + tprice.Text + "','" + from.Text + "','" + to.Text + "','" + mdate.Text + "');";
+
+                    MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+
+                    MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                    MySqlDataReader MyReader2;
+                    MyConn2.Open();
+                    MyReader2 = MyCommand2.ExecuteReader();
+                    MessageBox.Show("Save Data");
+                    button4.PerformClick();
+                    while (MyReader2.Read())
+                    {
+                    }
+                    con().Close();
+
                 }
-               con().Close();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                ClearData();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+
             }
-            ClearData();
 
         }
 
@@ -136,6 +146,9 @@ namespace PremiumBusReservationSystem
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (textBox3.Text!=null) {
+            
+            
             try
             {
                 
@@ -148,7 +161,9 @@ namespace PremiumBusReservationSystem
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
                 MessageBox.Show("Data Updated");
-                while (MyReader2.Read())
+                    button4.PerformClick();
+
+                    while (MyReader2.Read())
                 {
                 }
                 MyConn2.Close();
@@ -158,34 +173,49 @@ namespace PremiumBusReservationSystem
                 MessageBox.Show(ex.Message);
             }
             ClearData();
+            
+            }
+            else
+            {
+                MessageBox.Show("Error : Please select Trip");
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
-            try
+            if (textBox3.Text != null)
             {
 
-                string MyConnection2 = general.getsql();
-                string Query = "delete from trip where id=" + textBox3.Text + "";
-
-                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                MySqlDataReader MyReader2;
-                MyConn2.Open();
-                MyReader2 = MyCommand2.ExecuteReader();
-                MessageBox.Show("Data Deleted");
-                while (MyReader2.Read())
+                try
                 {
-                }
-                MyConn2.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
 
-            ClearData();
+                    string MyConnection2 = general.getsql();
+                    string Query = "delete from trip where id=" + textBox3.Text + "";
+
+                    MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                    MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                    MySqlDataReader MyReader2;
+                    MyConn2.Open();
+                    MyReader2 = MyCommand2.ExecuteReader();
+                    MessageBox.Show("Data Deleted");
+                    button4.PerformClick();
+                    while (MyReader2.Read())
+                    {
+                    }
+                    MyConn2.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                ClearData();
+            }
+            else
+            {
+                MessageBox.Show("Error: Please select first trip");
+            }
 
         }
 

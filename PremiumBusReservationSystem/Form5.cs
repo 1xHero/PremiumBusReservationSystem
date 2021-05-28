@@ -16,6 +16,8 @@ namespace PremiumBusReservationSystem
         {
             InitializeComponent();
             label2.Text = general.getusername();
+            label4.Text = general.firstname;
+            label6.Text = general.lastname;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

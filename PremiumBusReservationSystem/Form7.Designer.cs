@@ -36,13 +36,7 @@ namespace PremiumBusReservationSystem
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.stime = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.TextBox();
-            this.jtime = new System.Windows.Forms.TextBox();
-            this.sdeparture = new System.Windows.Forms.TextBox();
-            this.price = new System.Windows.Forms.TextBox();
-            this.sarrive = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -106,15 +100,6 @@ namespace PremiumBusReservationSystem
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Choose your Trip";
             // 
-            // stime
-            // 
-            this.stime.Location = new System.Drawing.Point(429, 378);
-            this.stime.Name = "stime";
-            this.stime.ReadOnly = true;
-            this.stime.Size = new System.Drawing.Size(48, 20);
-            this.stime.TabIndex = 6;
-            this.stime.Visible = false;
-            // 
             // id
             // 
             this.id.Location = new System.Drawing.Point(104, 378);
@@ -122,51 +107,6 @@ namespace PremiumBusReservationSystem
             this.id.ReadOnly = true;
             this.id.Size = new System.Drawing.Size(100, 20);
             this.id.TabIndex = 7;
-            // 
-            // jtime
-            // 
-            this.jtime.Location = new System.Drawing.Point(493, 378);
-            this.jtime.Name = "jtime";
-            this.jtime.ReadOnly = true;
-            this.jtime.Size = new System.Drawing.Size(100, 20);
-            this.jtime.TabIndex = 8;
-            this.jtime.Visible = false;
-            // 
-            // sdeparture
-            // 
-            this.sdeparture.Location = new System.Drawing.Point(629, 378);
-            this.sdeparture.Name = "sdeparture";
-            this.sdeparture.ReadOnly = true;
-            this.sdeparture.Size = new System.Drawing.Size(100, 20);
-            this.sdeparture.TabIndex = 9;
-            this.sdeparture.Visible = false;
-            // 
-            // price
-            // 
-            this.price.Location = new System.Drawing.Point(377, 404);
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            this.price.Size = new System.Drawing.Size(100, 20);
-            this.price.TabIndex = 10;
-            this.price.Visible = false;
-            // 
-            // sarrive
-            // 
-            this.sarrive.Location = new System.Drawing.Point(493, 404);
-            this.sarrive.Name = "sarrive";
-            this.sarrive.ReadOnly = true;
-            this.sarrive.Size = new System.Drawing.Size(100, 20);
-            this.sarrive.TabIndex = 11;
-            this.sarrive.Visible = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(629, 404);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 12;
-            this.textBox3.Visible = false;
             // 
             // label1
             // 
@@ -183,13 +123,7 @@ namespace PremiumBusReservationSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 511);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.sarrive);
-            this.Controls.Add(this.price);
-            this.Controls.Add(this.sdeparture);
-            this.Controls.Add(this.jtime);
             this.Controls.Add(this.id);
-            this.Controls.Add(this.stime);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -215,13 +149,13 @@ namespace PremiumBusReservationSystem
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox stime;
-        private System.Windows.Forms.TextBox id;
+      /*  private System.Windows.Forms.TextBox stime;
+        
         private System.Windows.Forms.TextBox jtime;
         private System.Windows.Forms.TextBox sdeparture;
         private System.Windows.Forms.TextBox price;
-        private System.Windows.Forms.TextBox sarrive;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox sarrive;*/
+        private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.Label label1;
     }
 }

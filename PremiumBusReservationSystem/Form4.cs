@@ -28,13 +28,13 @@ namespace PremiumBusReservationSystem
         }
         private void ClearData()
         {
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
-            textBox7.Text = "";
+            textBox1.Text = null;
+            textBox2.Text = null;
+            textBox3.Text = null;
+            textBox4.Text = null;
+            textBox5.Text = null;
+            textBox6.Text = null;
+            textBox7.Text = null;
 
 
         }
@@ -76,6 +76,7 @@ namespace PremiumBusReservationSystem
 
         private void Delete_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text != null) { 
             try
             {
 
@@ -99,6 +100,11 @@ namespace PremiumBusReservationSystem
             }
 
             ClearData();
+            }
+            else
+            {
+                MessageBox.Show("Error : Please Select user");
+            }
 
         }
 
@@ -109,6 +115,7 @@ namespace PremiumBusReservationSystem
 
         private void Update_Click(object sender, EventArgs e)
         {
+            if(textBox2.Text!=null && textBox2.Text!=""&& textBox3.Text != null && textBox3.Text != ""&& textBox4.Text != null && textBox4.Text != "")
             {
                 try
                 {
@@ -132,6 +139,10 @@ namespace PremiumBusReservationSystem
                     MessageBox.Show(ex.Message);
                 }
                 ClearData();
+            }
+            else
+            {
+                MessageBox.Show("Error : Please fill input box's first");
             }
         }
 
