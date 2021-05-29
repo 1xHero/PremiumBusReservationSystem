@@ -148,11 +148,15 @@ namespace PremiumBusReservationSystem
             catch (Exception ex)
 
             {
-
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorMessage(ex, "Error: Check input info not valid","Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
 
             }
 
+        }
+
+        private static void ErrorMessage(Exception ex,String Msgstring,String MsgName,MessageBoxButtons msgbtn,MessageBoxIcon MsgImg)
+        {
+            MessageBox.Show(ex.Message, MsgName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void button2_Click(object sender, EventArgs e)
