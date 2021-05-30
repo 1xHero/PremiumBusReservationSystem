@@ -23,6 +23,8 @@
 
 3. Add DB [Premiumbus.sql]() to mysql server
 
+4. To Edit code u need to install Mysql lib. https://dev.mysql.com/downloads/installer/ select mysqlconnector while setup.
+
  Appserv (phpmyadmin) 
  https://www.appserv.org/en/
  
