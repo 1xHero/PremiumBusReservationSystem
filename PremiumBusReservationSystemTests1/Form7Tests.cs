@@ -18,7 +18,7 @@ namespace PremiumBusReservationSystemTests1
             List<string> expected = new List<string>();
           
            // expected.Add("admin2");
-            expected.Add("admin2");
+            expected.Add("test");
 
             var f = new Form7();
             //Act
