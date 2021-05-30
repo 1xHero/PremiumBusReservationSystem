@@ -20,7 +20,8 @@
    git clone https://github.com/thunderbird01/PremiumBusReservationSystem.git
    ```
 2.Open InstallerEXE folder then open setup.exe file
-4. Add DB to mysql server
+
+3. Add DB to mysql server
 
  Appserv (phpmyadmin) 
  https://www.appserv.org/en/
