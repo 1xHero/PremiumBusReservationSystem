@@ -33,7 +33,7 @@
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Defualt mysqldb username:password -> root:toor1234 change it on projectfile
+Defualt mysqldb username:password -> root:toor1234 change it in projectfile -> program.cs
 
 Defualt username for Program username:password -> admin:admin
 
