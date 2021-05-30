@@ -5872,7 +5872,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PremiumBusReservationSystemInstaller"
         "ProductCode" = "8:{E4FBE378-757A-4A11-9928-0F9980103DE4}"
-        "PackageCode" = "8:{8A966296-2922-4999-87CA-3D18DDFF7956}"
+        "PackageCode" = "8:{955251EB-8BCD-4AE3-A2A9-2B4079BCF501}"
         "UpgradeCode" = "8:{E9AF7D16-132B-4E59-AAF9-00B35D7F644A}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -6003,7 +6003,7 @@
             "Target" = "8:_6B8AFDEDD5FE41EEA70831030C838540"
             "Folder" = "8:_0DB0BAAB7B214C3893292429A4CC4CCE"
             "WorkingFolder" = "8:_59626B9DC00C42EEA780179625037247"
-            "Icon" = "8:"
+            "Icon" = "8:_6F26D62EDD344F50BCDB43AC4EBA93C9"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A68C637294B64360A2466C5DC335B23F"
