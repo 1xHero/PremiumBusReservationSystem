@@ -49,6 +49,26 @@ namespace PremiumBusReservationSystem
         }
 
 
+        public bool IsUeserHaveTicket(string username)
+        {
+            MySqlConnection con = new MySqlConnection();
+
+            con.ConnectionString = general.getsql();
+            string query = "select username from ticket where username = '" + username + "'";
+
+            MySqlCommand sda = new MySqlCommand(query, con);
+            MySqlDataAdapter returnVal = new MySqlDataAdapter(query, con);
+
+            DataTable dt = new System.Data.DataTable();
+
+            returnVal.Fill(dt);
+            con.Close();
+            int count = dt.Rows.Count;
+            if (count>=1) return true;
+            else
+                return false;
+        }
+
 
         private MySqlConnection con()
         {
@@ -92,7 +112,7 @@ namespace PremiumBusReservationSystem
             }
             else
             {
-                string Query = "INSERT INTO ticket (username, journey_date,schedule_departure, schedule_arrival,price,From_To,trip_id) VALUES('" + general.getusername() + "','" + jjtime + "','" + ssdeparture + "','" +ssarrive + "','" + pprice + "','" + textBox3 + "','" + id + "');";
+                string Query = "INSERT INTO ticket (username, journey_date,schedule_departure, schedule_arrival,price,From_To,trip_id) VALUES('" + general.getusername() + "','" + jjtime + "','" + ssdeparture + "','" +ssarrive + "','" + pprice + "','" + textBox3 + "','" + id.Text + "');";
                // string Query3 = "Select freeseats from trip where id="+ id.Text +" ";
                 string Query2 = "update trip set freeseats=freeseats-1 where id ='" + id + "';";
             try
@@ -167,6 +187,11 @@ namespace PremiumBusReservationSystem
         }
 
         private void stime_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form7_Load(object sender, EventArgs e)
         {
 
         }

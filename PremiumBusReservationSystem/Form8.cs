@@ -23,6 +23,10 @@ namespace PremiumBusReservationSystem
             InitializeComponent();
         }
 
+
+
+
+
         public static string selected_ID=null;
         public static string mdate = null;//month date
         public static string tripid = null;//trip id
@@ -287,6 +291,11 @@ namespace PremiumBusReservationSystem
             }
 
 
+        }
+
+        private void Form8_Load(object sender, EventArgs e)
+        {
+          //  MessageBox.Show("Res:" + checkseatnumafterrevok("admin"));
         }
     }
 }

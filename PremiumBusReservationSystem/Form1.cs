@@ -33,9 +33,31 @@ namespace PremiumBusReservationSystem
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
+        {
+           
+
+          //  MessageBox.Show("Res:" + IsAdmin("admin"));
+        }
+        //Unit Test Method
+        public bool IsAdmin(string username)
         {
 
+            MySqlConnection con = new MySqlConnection();
+
+            con.ConnectionString = general.getsql();
+            string query = "select role from user_account where username = '" + username + "'";
+
+            MySqlCommand sda = new MySqlCommand(query, con);
+            MySqlDataAdapter returnVal = new MySqlDataAdapter(query, con);
+
+            DataTable dt = new System.Data.DataTable();
+
+            returnVal.Fill(dt);
+            con.Close();
+            if (dt.Rows[0]["role"] as string == "admin") return true;
+            else
+                return false;
         }
 
         private void button1_Click(object sender, EventArgs e)

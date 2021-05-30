@@ -123,6 +123,7 @@ namespace PremiumBusReservationSystem
             this.MinimizeBox = false;
             this.Name = "Form7";
             this.Text = "Premium Bus Reservation System - User Panel - Buy Ticket";
+            this.Load += new System.EventHandler(this.Form7_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

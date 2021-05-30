@@ -108,6 +108,7 @@ namespace PremiumBusReservationSystem
             this.Name = "Form8";
             this.ShowInTaskbar = false;
             this.Text = " My Ticket";
+            this.Load += new System.EventHandler(this.Form8_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
