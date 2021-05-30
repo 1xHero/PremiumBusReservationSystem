@@ -21,7 +21,7 @@
    ```
 2.Open InstallerEXE folder then open setup.exe file
 
-3. Add DB to mysql server
+3. Add DB [Premiumbus.sql]() to mysql server
 
  Appserv (phpmyadmin) 
  https://www.appserv.org/en/
