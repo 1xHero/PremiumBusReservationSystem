@@ -82,7 +82,7 @@ namespace PremiumBusReservationSystem
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(64, 35);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Exit";
+            this.button4.Text = "SignOut";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -166,6 +166,7 @@ namespace PremiumBusReservationSystem
             this.MaximizeBox = false;
             this.Name = "Form5";
             this.Text = "Premium Bus Reservation System - UserPanel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form5_FormClosing);
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);

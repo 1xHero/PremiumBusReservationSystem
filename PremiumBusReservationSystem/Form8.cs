@@ -275,12 +275,13 @@ namespace PremiumBusReservationSystem
             if ((selected_ID != null && tripid !=null)) { 
 
             string currentDir = System.IO.Directory.GetCurrentDirectory();
-            
-            string path = Path.Combine(currentDir, "..\\..\\..\\tickets.doc");
-            string spath = Path.Combine(currentDir, "..\\..\\..\\ticket_out.doc");
+                string appDataDir = System.IO.Directory.GetCurrentDirectory();
+
+                string path = Path.Combine(currentDir, "tickets.doc");//..\\..\\..\\
+                string spath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ticket_out.doc");//..\\..\\..\\
 
 
-            CreateWordDocument(@path, @spath);
+                CreateWordDocument(@path, @spath);
 
                 Process.Start(spath);
 

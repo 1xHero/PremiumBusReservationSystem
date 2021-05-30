@@ -32,7 +32,11 @@ namespace PremiumBusReservationSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            // Application.Exit();
+            Form1 fm = new Form1();
+            
+            fm.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,6 +51,11 @@ namespace PremiumBusReservationSystem
             Form8 fm = new Form8();
 
             fm.Show();
+        }
+
+        private void Form5_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

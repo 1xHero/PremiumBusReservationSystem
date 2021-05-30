@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PremiumBusReservationSystem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PremiumBusReservationSystemTests1", "PremiumBusReservationSystemTests1\PremiumBusReservationSystemTests1.csproj", "{4DDEABE1-0393-41DB-B8D6-BE7868422316}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PremiumBusReservationSystemInstaller", "PremiumBusReservationSystemInstaller\PremiumBusReservationSystemInstaller.vdproj", "{1247AB0F-7D94-4CF1-B5B1-1011385D7881}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{4DDEABE1-0393-41DB-B8D6-BE7868422316}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DDEABE1-0393-41DB-B8D6-BE7868422316}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DDEABE1-0393-41DB-B8D6-BE7868422316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1247AB0F-7D94-4CF1-B5B1-1011385D7881}.Debug|Any CPU.ActiveCfg = Debug
+		{1247AB0F-7D94-4CF1-B5B1-1011385D7881}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

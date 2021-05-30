@@ -52,5 +52,16 @@ namespace PremiumBusReservationSystem
         {
 
         }
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (string.Equals((sender as Button).Name, @"CloseButton"))
+             Application.Exit();
+
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
