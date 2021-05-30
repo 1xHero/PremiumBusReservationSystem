@@ -89,6 +89,8 @@ namespace PremiumBusReservationSystem
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(505, 302);
+            this.MinimumSize = new System.Drawing.Size(505, 302);
             this.Name = "Form2";
             this.Text = "Premium Bus Reservation System - Administrator Panel";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);

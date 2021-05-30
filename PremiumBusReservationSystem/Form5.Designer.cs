@@ -164,6 +164,8 @@ namespace PremiumBusReservationSystem
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(699, 249);
+            this.MinimumSize = new System.Drawing.Size(699, 249);
             this.Name = "Form5";
             this.Text = "Premium Bus Reservation System - UserPanel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form5_FormClosing);

@@ -46,9 +46,14 @@ namespace PremiumBusReservationSystem
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(775, 203);
+            this.dataGridView1.MinimumSize = new System.Drawing.Size(775, 203);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.ShowCellErrors = false;
             this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.ShowRowErrors = false;
             this.dataGridView1.Size = new System.Drawing.Size(775, 203);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -104,7 +109,9 @@ namespace PremiumBusReservationSystem
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(827, 421);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(827, 421);
             this.Name = "Form8";
             this.ShowInTaskbar = false;
             this.Text = " My Ticket";

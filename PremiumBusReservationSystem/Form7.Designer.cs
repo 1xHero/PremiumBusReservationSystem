@@ -45,7 +45,9 @@ namespace PremiumBusReservationSystem
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(770, 333);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -120,7 +122,9 @@ namespace PremiumBusReservationSystem
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(816, 550);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(816, 550);
             this.Name = "Form7";
             this.Text = "Premium Bus Reservation System - User Panel - Buy Ticket";
             this.Load += new System.EventHandler(this.Form7_Load);
