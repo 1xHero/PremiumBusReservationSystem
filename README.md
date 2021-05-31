@@ -4,7 +4,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-##Premiumbus
+#Bus reservation System
+
+simple program
 
 ### Built With
 
